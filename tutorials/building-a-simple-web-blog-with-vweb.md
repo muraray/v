@@ -72,6 +72,8 @@ fn (app mut App) index() {
 
 pub fn (app &App) init() {}
 
+pub fn (app &App) reset() {}
+
 ```
 
 Run it with
@@ -102,6 +104,16 @@ fn (app mut App) time() {
 }
 ```
 
+Import the time module 
+```v
+// blog.v
+module main
+
+import (
+        time
+	vweb
+)
+```
 
 <img width=662 src="https://github.com/vlang/v/blob/master/tutorials/img/time.png?raw=true">
 
@@ -204,6 +216,18 @@ insert into articles (title, text) values (
 
 Run the file with `psql -f blog.sql`.
 
+
+Import the pg module
+```v
+// blog.v
+module main
+
+import (
+	time
+	vweb
+	pg
+)
+```
 
 Add a Postgres DB handle to `App`:
 
